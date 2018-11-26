@@ -49,7 +49,8 @@ class CRM
       first_name: first_name,
       last_name:  last_name,
       email:      email,
-      note:       note)
+      note:       note
+)
   end
 
   def modify_existing_contact
@@ -58,12 +59,11 @@ class CRM
      id = gets.chomp
      Contact.all.each do |contact|
        if contact.id ==  id.to_i
-         puts "Enter an attribute to modify: First Name = 1,
-         Last Name  = 2, Email = 3, Note = 4"
+         puts "Enter an attribute to modify: first_name, last_name, email, note"
          attribute_to_update = gets.chomp
          puts "Enter updated info"
          updated_value = gets.chomp
-         contact.update(attribute_to_update, updated_value)
+         contact.update(attribute_to_update => updated_value)
          puts "Contact updated!"
         end
       end
@@ -87,7 +87,7 @@ class CRM
     attribute_to_search = gets.chomp
     puts "Enter name, email, or note"
     value_to_search = gets.chomp
-    puts Contact.find_by(attribute_to_search, value_to_search)
+    puts Contact.find_by(attribute_to_search => value_to_search)
   end
 
 

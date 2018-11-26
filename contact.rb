@@ -62,7 +62,7 @@ class Contact < ActiveRecord::Base
   #   def update(attribute, value)
   #     attribute = value
   #   end
-  #
+  # #
   #   def full_name
   #     return "#{first_name} #{last_name}"
   #   end
