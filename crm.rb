@@ -45,7 +45,11 @@ class CRM
     puts "Enter a note: "
     print "> "
     note = gets.chomp
-    person = Contact.create(first_name, last_name, email, note)
+    person = Contact.create(
+      first_name: first_name,
+      last_name:  last_name,
+      email:      email,
+      note:       note)
   end
 
   def modify_existing_contact
